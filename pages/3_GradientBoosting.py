@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 import sklearn
 
+
 st.set_page_config(
     page_title="Water Quality Prediction Gradient Boosting",
     page_icon="🌊",

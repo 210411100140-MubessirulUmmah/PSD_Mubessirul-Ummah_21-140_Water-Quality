@@ -12,7 +12,7 @@ st.set_page_config(
 
 st.title("🌊 Water Quality Prediction Random Forest")
 st.image("grafik perbandingan metode.png", caption="Grafik Perbandingan Metode")
-st.write('Dalam prediksi kali ini saya akan menggunakan model random forest, dimana fitur yang digunakan berjumlah 17 dengan akurasi pelatihan mencapai 98,71%.')
+st.write('Dalam prediksi kali ini saya akan menggunakan model random forest, dimana fitur yang digunakan berjumlah 19 dengan akurasi pelatihan mencapai 98,85%.')
 fitur = joblib.load('fiturrandomforest.pkl')
 st.write(fitur)
 
@@ -24,6 +24,8 @@ cadmium = st.number_input("Kandungan Cadmium : ")
 chloramine = st.number_input("Kandungan Chloramine : ")
 chromium = st.number_input("Kandungan Chromium : ")
 copper = st.number_input("Kandungan Tembaga : ")
+flouride = st.number_input("Kandungan Flourida : ")
+bacteria = st.number_input("Kandungan Bakteri : ")
 viruses = st.number_input("Kandungan Virus : ")
 nitrates = st.number_input("Kandungan Nitrat : ")
 nitrites = st.number_input("Kandungan Nitrit : ")
@@ -44,6 +46,8 @@ data = {'aluminium' : aluminium,
         'chloramine' : chloramine,
         'chromium' : chromium,
         'copper' : copper,
+        'flouride' : flouride,
+        'bacteria' : bacteria,
         'viruses' : viruses,
         'nitrates' : nitrates,
         'nitrites' : nitrites,
