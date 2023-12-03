@@ -10,9 +10,42 @@ st.set_page_config(
     layout="wide"
 )
 
+tab1, tab2, tab3, tab4 = st.tabs(["Data", "Preprocessing", "Modelling", "Implementation"])
+
+with tab1:
+    st.write("""
+    <h4>Data </h4>
+    <br>
+    """, unsafe_allow_html=True)
+
+
+    st.write("""<h4> Aplikasi Untuk Memprediksi Penyakit Ginjal Kronis <h4>""", unsafe_allow_html=True)
+
+    st.markdown("""
+    Dataset penyakit ginjal kronis diambil dari link kaggle berikut :
+    <a href="https://www.kaggle.com/datasets/abhia1999/chronic-kidney-disease"> https://www.kaggle.com/datasets/abhia1999/chronic-kidney-disease</a>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    Link Repository Github
+    https://raw.githubusercontent.com/ach-Ilhamf/data_csv/main/penyakit_ginjal.csv
+    """, unsafe_allow_html=True)
+
+    st.write('Dataset ini berisi tentang klasifikasi kualitas air')
+    df = pd.read_csv("waterQuality1.csv")
+    st.write("Dataset penyakit ginjal kronis : ")
+    st.write(df)
+    st.write("Penjelasan fitur-fitur yang ada")
+
+    st.write("""
+    <ol>
+    
+    </ol>
+    """,unsafe_allow_html=True)
+
 st.title("🌊 Water Quality Prediction Random Forest")
 st.image("grafik perbandingan metode.png", caption="Grafik Perbandingan Metode")
-st.write('Dalam prediksi kali ini saya akan menggunakan model random forest, dimana fitur yang digunakan berjumlah 19 dengan akurasi pelatihan mencapai 98,85%.')
+st.write('Dalam prediksi kali ini saya akan menggunakan model random forest, dimana fitur yang digunakan berjumlah 17 dengan akurasi pelatihan mencapai 98,76%.')
 fitur = joblib.load('fiturrandomforest.pkl')
 st.write(fitur)
 
@@ -24,8 +57,6 @@ cadmium = st.number_input("Kandungan Cadmium : ")
 chloramine = st.number_input("Kandungan Chloramine : ")
 chromium = st.number_input("Kandungan Chromium : ")
 copper = st.number_input("Kandungan Tembaga : ")
-flouride = st.number_input("Kandungan Flourida : ")
-bacteria = st.number_input("Kandungan Bakteri : ")
 viruses = st.number_input("Kandungan Virus : ")
 nitrates = st.number_input("Kandungan Nitrat : ")
 nitrites = st.number_input("Kandungan Nitrit : ")
@@ -46,8 +77,6 @@ data = {'aluminium' : aluminium,
         'chloramine' : chloramine,
         'chromium' : chromium,
         'copper' : copper,
-        'flouride' : flouride,
-        'bacteria' : bacteria,
         'viruses' : viruses,
         'nitrates' : nitrates,
         'nitrites' : nitrites,

@@ -11,7 +11,7 @@ st.set_page_config(
 
 st.title("🌊 Water Quality Prediction Decision Tree")
 st.image("grafik perbandingan metode.png", caption="Grafik Perbandingan Metode")
-st.write('Dalam prediksi kali ini saya akan menggunakan model Adaboost, dimana fitur yang digunakan berjumlah 20 dengan akurasi pelatihan mencapai 98,62%.')
+st.write('Dalam prediksi kali ini saya akan menggunakan model Adaboost, dimana fitur yang digunakan berjumlah 19 dengan akurasi pelatihan mencapai 98,33%.')
 fitur = joblib.load('fiturdecisiontree.pkl')
 st.write(fitur)
 
@@ -26,7 +26,6 @@ copper = st.number_input("Kandungan Tembaga : ")
 flouride = st.number_input("Kandungan Flourida : ")
 bacteria = st.number_input("Kandungan Bakteri : ")
 viruses = st.number_input("Kandungan Virus : ")
-lead = st.number_input("Kandungan Timbal : ")
 nitrates = st.number_input("Kandungan Nitrat : ")
 nitrites = st.number_input("Kandungan Nitrit : ")
 mercury = st.number_input("Kandungan Mercuri : ")
@@ -49,7 +48,6 @@ data = {'aluminium' : aluminium,
         'flouride' : flouride,
         'bacteria' : bacteria,
         'viruses' : viruses,
-        'lead' : lead,
         'nitrates' : nitrates,
         'nitrites' : nitrites,
         'mercury' : mercury,
